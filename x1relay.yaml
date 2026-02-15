@@ -1,0 +1,87 @@
+esphome:
+  name: x1relay
+  friendly_name: X1RELAY
+
+bk72xx:
+  board: cb3s
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "0GYZzjM0ePG1vm1MF6ZhxCpaovlvTEECCL0ifjYpUJs="
+
+ota:
+  - platform: esphome
+    password: "057e1e32627b5b49fe8eacb9a970a518"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    static_ip: 192.168.10.225
+    gateway: 192.168.10.1
+    subnet: 255.255.255.0
+    
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "X1Relay Fallback Hotspot"
+    password: "8YwaEwLL8Zrk"
+
+captive_portal:
+    
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: P6
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "Botón físico"
+    filters:
+      - delayed_on: 50ms
+      - delayed_off: 50ms
+    on_press:
+      - switch.toggle: relay_1
+
+# -------------------
+# RF 433 MHz (P14)
+# -------------------
+  - platform: gpio
+    pin:
+      number: P14
+      inverted: true
+      mode: INPUT_PULLUP
+    name: "RF 433"
+    filters:
+      - delayed_on: 50ms
+      - delayed_off: 50ms
+    on_press:
+      - switch.toggle: relay_1
+
+# -------------------
+# RELÉ (P24)
+# -------------------
+switch:
+  - platform: gpio
+    name: "Relé"
+    id: relay_1
+    pin:
+      number: P24
+      inverted: false
+    restore_mode: ALWAYS_OFF
+    on_turn_on:
+      - output.turn_on: led_azul
+    on_turn_off:
+      - output.turn_off: led_azul
+
+# -------------------
+# LED (P8 - activo en LOW)
+# -------------------
+output:
+  - platform: gpio
+    id: led_azul
+    pin:
+      number: P8
+      inverted: true
