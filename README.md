@@ -1,4 +1,7 @@
 # MHCOZY-TYWRA-RF-ESPHOME
+
+<img width="640" height="640" alt="image" src="https://github.com/user-attachments/assets/07f8b658-b1db-45c3-9920-e291f8fc2ffc" />
+
 Flasheo y configuración con Esphome (HAOS)
 
 Lo primero es localizar los pines para usar un conversor USB-TTL (los he marcado con amarillo)
