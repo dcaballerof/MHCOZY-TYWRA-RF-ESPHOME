@@ -11,24 +11,24 @@ logger:
 # Enable Home Assistant API
 api:
   encryption:
-    key: "0GYZzjM0ePG1vm1MF6ZhxCpaovlvTEECCL0ifjYpUJs="
+    key: "PON EL TUYO"
 
 ota:
   - platform: esphome
-    password: "057e1e32627b5b49fe8eacb9a970a518"
+    password: "PON EL TUYO"
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
   manual_ip:
-    static_ip: 192.168.10.225
-    gateway: 192.168.10.1
+    static_ip: 192.168.x.x
+    gateway: 192.168.x.x
     subnet: 255.255.255.0
     
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "X1Relay Fallback Hotspot"
-    password: "8YwaEwLL8Zrk"
+    ssid: "PON EL TUYO"
+    password: "PON EL TUYO"
 
 captive_portal:
     
