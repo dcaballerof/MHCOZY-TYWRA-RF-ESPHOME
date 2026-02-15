@@ -11,7 +11,10 @@ Para el modo BOOT vamos a hacer puente en el momento del flasheo entre CEN y GND
 
 Con ESPHOME hacemos el código YAML que adjunto en el post.
 
-Y tenemos que generar el archivo para la app Itchiptool, en la cual vamos a flashear subiendo el archivo que nos da EspHome.
+Y tenemos que generar el archivo para la app Itchiptool, en la cual vamos a flashear subiendo el archivo que nos da EspHome (previamente le hemos dado de alta, es un BK72XX y después seleccionas CB3S WIFI MODULE:
+
+<img width="307" height="410" alt="image" src="https://github.com/user-attachments/assets/5eb16558-4724-4ae3-bc4b-bae832182b29" />
+
 
 <img width="550" height="424" alt="image" src="https://github.com/user-attachments/assets/055a6977-3d70-4c26-a3d7-b94223075a35" />
 
